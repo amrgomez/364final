@@ -1,7 +1,9 @@
 # 364final
 Description: I will be using the News API to create an application that finds the most popular headlines from a term a user submits. One function will be to display a page similar to a newspage, including an image for the newsource of the article with the most popular headlines. This application will require users to login and save data for each user as a personal "newspaper". The relationships will be a one-to-many between users and searches and many-to-many between news sources and articles.
 
-Users are able to search for terms, see all results returned based on what used submitted, and past searches without logging in. Users will have to login/register if they have not already to create a personal newspaper, and access past newspapers created. The user can search for any term on the localhost:5000 page as long as there a recent headlines for it, and if there are not, they will be indicated. When selecting articles for the newspaper, users cna hold the shift key to select more than one article. 
+Users are able to search for terms, see all results returned based on what used submitted, and past searches without logging in. Users will have to login/register if they have not already to create a personal newspaper, and access past newspapers created. The user can search for any term on the localhost:5000 page as long as there a recent headlines for it, and if there are not, they will be indicated. When selecting articles for the newspaper, users can hold the shift key to select more than one article. Later, the user can go to the "See all articles" page and update or delete a headline.
+
+NOTE: I applied for the Student Developer pack but have not heard back yet. The other attempts I made to receive one were rejected.
 
 There are no additional modules to install used outside of class. 
 
