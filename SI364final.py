@@ -143,7 +143,7 @@ class NewsPaper(FlaskForm):
     headlines = SelectMultipleField('Choose headlines for your newspaper')
     submit= SubmitField('Submit')
 class UpdateTerm(FlaskForm):
-    items= StringField('Submit a new term', validators=[Required()])
+    items= StringField('Submit a new headline', validators=[Required()])
     submit=SubmitField('Update')
 
 class UpdateButtonForm(FlaskForm):
@@ -343,7 +343,7 @@ def update(item):
     if form.validate_on_submit():
         i.source= form.items.data
         db.session.commit()
-        flash("Updated source to: " + i.source)
+        flash("Updated headline to: " + i.source)
         return redirect(url_for('all_news'))
     return render_template('updates.html', form=form, i=i)
 
