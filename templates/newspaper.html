@@ -1,0 +1,18 @@
+<h1>My newspaper</h1>
+
+{% extends 'index.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+
+{% for sg in imgs %}
+      <strong>{{ sg.source }}</strong>
+      </br>
+      <iframe src={{ sg.url }} width="1000" height="1000" frameBorder="0" ></iframe>
+    <br><br>
+{% endfor %}
+
+{% endblock %}

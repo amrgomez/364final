@@ -1,0 +1,33 @@
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('logout') }}">Sign Out {{current_user.username}}</a>
+{% else %}
+    <a href="{{ url_for('login') }}">Sign In</a>
+{% endif %}
+<br>
+<br>
+
+{% block navigation %}
+<ul><i>
+    <li><a href="{{ url_for('index') }}">Search news term</a>
+    <li><a href="{{ url_for('all_news') }}">See all articles</a></li>
+    <li><a href="{{ url_for('search') }}">See all past searches</a></li>
+    <li><a href="{{ url_for('create_np') }}">Create a personal newspaper</a></li>
+    <li><a href="{{ url_for('see_newspaper') }}">See your newspapers</a></li></li>
+</ul>
+<p>--------</p><br>
+{% endblock %}
+
+{% block main_content %}
+<form method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.term.label }} {{ form.term() }}
+	{{ form.submit() }}
+</form>
+
+<div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+</div>
+
+{% endblock %}

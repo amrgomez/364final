@@ -1,0 +1,11 @@
+{% block content %}
+
+<form method= "POST" action="/update/{{i.id}}">
+    {{form.hidden_tag() }}
+    {{ form.items.label }} {{form.items()}}
+    {{ form.submit() }}
+</form>
+   
+
+<a href="{{ url_for('all_news')}}">Return to all news</a>
+{% endblock %}

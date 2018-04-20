@@ -1,0 +1,41 @@
+<h1> All Headlines </h1>
+{% extends 'index.html' %}
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+<ul>
+<div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+{% for sg in all_news %}
+<li>
+  <h4>{{ sg.source}}</h4>
+  </br>
+  <iframe src={{ sg.url }} width="1000" height="1000" frameBorder="0" ></iframe>
+</li>
+
+<form method="POST" action="/update/{{sg.id}}">
+	{{ form.hidden_tag() }}
+	{{ form.submit() }}
+</form>
+
+<form method="POST" action= '/delete/{{sg.id}}'>
+	{{ form1.hidden_tag() }}
+	{{ form1.submit() }}
+</form>
+<br>
+{% endfor %}
+</ul>
+
+<div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+
+<a href="{{ url_for('index')}}">Return to add term</a>
+{% endblock %}

@@ -1,0 +1,31 @@
+<h1>Search results for {{ term.term }}</h1>
+{% extends 'index.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+
+<ul>
+{% for sg in imgs %}
+<li>
+  <h4>{{ sg.source }}</h4>
+  </br>
+  <iframe src={{ sg.url }} width="1000" height="1000" frameBorder="0" ></iframe>
+</li>
+<br>
+{% endfor %}
+</ul>
+
+{% if not imgs %}
+There are no latest headlines to show. Please try another term.
+{% endif %}
+
+<div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+
+{% endblock %}
